@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/table"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/Scale"
+        android:layout_width="130dp"
+        android:layout_height="170dp"
+        android:background="@drawable/scale"
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:hint="e.g 5"
+        android:rotation="-6"
+        android:rotationX="19"
+        android:rotationY="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.327" />
+
+    <ImageButton
+        android:id="@+id/Glav"
+        android:layout_width="140dp"
+        android:layout_height="182dp"
+        android:background="@drawable/glavs"
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:hint="e.g 5"
+        android:rotation="-13"
+        android:rotationX="14"
+        android:rotationY="-1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <ImageButton
+        android:id="@+id/Timer"
+        android:layout_width="140dp"
+        android:layout_height="176dp"
+        android:background="@drawable/timer"
+        android:contentDescription="Enter How Much Cookies You Want"
+        android:hint="e.g 5"
+        android:rotation="19"
+        android:rotationX="10"
+        android:rotationY="-2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.574" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
