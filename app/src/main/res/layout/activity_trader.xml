@@ -22,36 +22,55 @@
         android:contentDescription="Enter How Much Cookies You Want"
         android:hint="e.g 5"  />
 
-    <ImageButton
-        android:id="@+id/buttonplay"
-        android:layout_width="164dp"
-        android:layout_height="142dp"
-        android:layout_marginTop="267dp"
-        android:background="@drawable/play_icon"
-        android:contentDescription="Enter How Much Cookies You Want"
-        android:hint="e.g 5"
-        android:rotationX="9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.504" />
 
     <ImageButton
-        android:id="@+id/buttonpause"
-        android:layout_width="129dp"
-        android:layout_height="155dp"
-        android:layout_marginTop="267dp"
-        android:background="@drawable/stop_icon"
-        android:contentDescription="Enter How Much Cookies You Want"
-        android:hint="e.g 5"
-        android:rotationX="9"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+            android:id="@+id/buttonplay"
+            android:layout_width="164dp"
+            android:layout_height="142dp"
+            android:layout_marginTop="267dp"
+            android:background="@drawable/play_icon"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:hint="e.g 5"
+            android:rotationX="9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.504" />
+
+    <ImageButton
+            android:id="@+id/buttonpause"
+            android:layout_width="84dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="267dp"
+            android:background="@drawable/pause_icon"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:hint="e.g 5"
+            android:rotationX="9"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.531"
+            app:layout_constraintHorizontal_bias="0.336" />
+
+    <ImageButton
+            android:id="@+id/buttonstop"
+            android:layout_width="148dp"
+            android:layout_height="159dp"
+            android:layout_marginTop="267dp"
+            android:background="@drawable/stop_icon"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:hint="e.g 5"
+            android:rotationX="9"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.528"
+            app:layout_constraintHorizontal_bias="0.659" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

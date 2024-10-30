@@ -6,7 +6,7 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.inscryption.bosses.Angeler;
-import com.example.inscryption.bosses.Staratel;
+import com.example.inscryption.bosses.Prospector;
 import com.example.inscryption.bosses.Trader;
 
 public class Glavi extends AppCompatActivity {
@@ -15,26 +15,26 @@ public class Glavi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glavs);
 
-        ImageButton button1 = findViewById(R.id.imageButton);
-        ImageButton button2 = findViewById(R.id.imageButton2);
-        ImageButton button3 = findViewById(R.id.imageButton3);
+        ImageButton prospectorButton = findViewById(R.id.prospectorButton);
+        ImageButton traderButton = findViewById(R.id.traderButton);
+        ImageButton anglerButton = findViewById(R.id.anglerButton);
 
-        button1.setOnClickListener(v -> {
-            Intent intent1 = new Intent(this, Staratel.class);
-            intent1.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-            startActivity(intent1);
+        prospectorButton.setOnClickListener(v -> {
+            Intent starIntent = new Intent(this, Prospector.class);
+            starIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            startActivity(starIntent);
         });
 
-        button2.setOnClickListener(v -> {
-            Intent intent2 = new Intent(this, Trader.class);
-            intent2.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-            startActivity(intent2);
+        traderButton.setOnClickListener(v -> {
+            Intent traderIntent = new Intent(this, Trader.class);
+            traderIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            startActivity(traderIntent);
         });
 
-        button3.setOnClickListener(v -> {
-            Intent intent3 = new Intent(this, Angeler.class);
-            intent3.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-            startActivity(intent3);
+        anglerButton.setOnClickListener(v -> {
+            Intent anglerIntent = new Intent(this, Angeler.class);
+            anglerIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            startActivity(anglerIntent);
         });
     }
 }

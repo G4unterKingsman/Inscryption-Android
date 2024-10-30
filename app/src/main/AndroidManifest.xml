@@ -22,7 +22,7 @@
             android:name=".bosses.Angeler"
             android:exported="false" />
         <activity
-            android:name=".bosses.Staratel"
+            android:name=".bosses.Prospector"
             android:exported="false" />
         <activity
             android:name=".TimerJ"
