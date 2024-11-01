@@ -19,7 +19,7 @@
             android:name=".bosses.Trader"
             android:exported="false" />
         <activity
-            android:name=".bosses.Angeler"
+            android:name=".bosses.Fisherman"
             android:exported="false" />
         <activity
             android:name=".bosses.Prospector"
@@ -28,7 +28,7 @@
             android:name=".TimerJ"
             android:exported="false" />
         <activity
-            android:name=".Glavi"
+            android:name=".BossChooser"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

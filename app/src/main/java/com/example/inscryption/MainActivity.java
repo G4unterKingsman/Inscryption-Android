@@ -21,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
             mPlayer.start();
         }
 
-        ImageButton glad = findViewById(R.id.Glav);
+        ImageButton bosses = findViewById(R.id.Bosses);
         ImageButton timer = findViewById(R.id.Timer);
         ImageButton scale = findViewById(R.id.Scale);
 
-        glad.setOnClickListener(v -> {
-            Intent intent1 = new Intent(this, Glavi.class);
+        bosses.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, BossChooser.class);
             startActivity(intent1);
         });
 
@@ -41,9 +41,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public static void resumeMusic() {
+    public static void resumeMainMusic() {
         if (mPlayer != null && !mPlayer.isPlaying()) {
             mPlayer.start();
+        }
+    }
+
+    public static void pauseMainMusic() {
+        if (MainActivity.mPlayer != null && MainActivity.mPlayer.isPlaying()) {
+            MainActivity.mPlayer.pause();
         }
     }
 

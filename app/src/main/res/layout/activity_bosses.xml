@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/table"
-    tools:context=".Glavi">
+    tools:context=".BossChooser">
 
     <ImageButton
         android:id="@+id/prospectorButton"
@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.85" />
 
     <ImageButton
-        android:id="@+id/anglerButton"
+        android:id="@+id/fishermanButton"
         android:layout_width="122dp"
         android:layout_height="163dp"
         android:background="@drawable/ribak"

@@ -26,10 +26,10 @@
         app:layout_constraintVertical_bias="0.327" />
 
     <ImageButton
-        android:id="@+id/Glav"
+        android:id="@+id/Bosses"
         android:layout_width="140dp"
         android:layout_height="182dp"
-        android:background="@drawable/glavs"
+        android:background="@drawable/bosses"
         android:contentDescription="Enter How Much Cookies You Want"
         android:hint="e.g 5"
         android:rotation="-13"
