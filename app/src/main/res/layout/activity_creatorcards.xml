@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/table"
+    tools:context=".cards.CardCreator">
+
+    <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="345dp"
+            android:layout_height="449dp"
+            android:rotationX="9"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:hint="e.g 5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.557"
+            app:srcCompat="@drawable/inscard" />
+
+    <Button
+            android:id="@+id/buttonsave"
+            android:layout_width="141dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="116dp"
+            android:text="Save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.846" />
+
+    <EditText
+            android:id="@+id/editTextDamage"
+            android:layout_width="68dp"
+            android:layout_height="71dp"
+            android:ems="10"
+            android:hint="Damage"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/cherni"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.722"
+            app:layout_constraintHorizontal_bias="0.204" />
+
+    <EditText
+            android:id="@+id/editTextHP"
+            android:layout_width="100dp"
+            android:layout_height="98dp"
+            android:ems="10"
+            android:hint="HP"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/cherni"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.816"
+            app:layout_constraintHorizontal_bias="0.836" />
+
+    <EditText
+            android:id="@+id/editTextPrice"
+            android:layout_width="56dp"
+            android:layout_height="66dp"
+            android:ems="10"
+            android:hint="Price"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/cherni"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.396"
+            app:layout_constraintHorizontal_bias="0.757" />
+
+    <EditText
+            android:id="@+id/editTextCardName"
+            android:layout_width="225dp"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:hint="cardname"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/cherni"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.292"
+            app:layout_constraintHorizontal_bias="0.44" />
+
+    <EditText
+            android:id="@+id/editTextPlayerName"
+            android:layout_width="225dp"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:hint="playerName"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/cherni"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.539"
+            app:layout_constraintHorizontal_bias="0.497" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

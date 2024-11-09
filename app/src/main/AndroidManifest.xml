@@ -25,8 +25,14 @@
             android:name=".bosses.Prospector"
             android:exported="false" />
         <activity
-            android:name=".TimerJ"
+            android:name=".timer.Timer"
             android:exported="false" />
+        <activity
+            android:name=".cards.CardCreator"
+            android:exported="false" />
+        <activity
+                android:name=".cards.ShowPlayers"
+                android:exported="false" />
         <activity
             android:name=".BossChooser"
             android:exported="false" />

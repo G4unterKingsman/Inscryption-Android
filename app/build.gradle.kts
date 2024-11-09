@@ -27,11 +27,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
@@ -45,4 +45,19 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+}
+
+dependencies {
+    implementation("org.projectlombok:lombok:1.18.28")// Room - основная библиотека
+    implementation("androidx.room:room-runtime:2.5.2")
+
+    // Компилятор Room для аннотаций (необходим для Java)
+    annotationProcessor("androidx.room:room-compiler:2.5.2")
+
+    // Опционально: поддержка RxJava2, если нужна
+    implementation("androidx.room:room-rxjava2:2.5.2")
+
+    // Опционально: поддержка RxJava3, если нужна
+    implementation("androidx.room:room-rxjava3:2.5.2")
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -24,6 +25,8 @@ public class ButtonService extends Service {
                 buttonPause.setVisibility(View.VISIBLE);
                 buttonStop.setVisibility(View.VISIBLE);
                 break;
+            default:
+                Toast.makeText(buttonPause.getContext(), "сработал дефолт в Button Service", Toast.LENGTH_SHORT).show();
         }
     }
 
