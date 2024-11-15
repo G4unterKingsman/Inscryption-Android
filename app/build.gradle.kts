@@ -49,8 +49,8 @@ dependencies {
 }
 
 dependencies {
-    implementation("org.projectlombok:lombok:1.18.28")// Room - основная библиотека
-    implementation("androidx.room:room-runtime:2.5.2")
+    //implementation("org.projectlombok:lombok:1.18.28")
+    implementation("androidx.room:room-runtime:2.5.2")// Room - основная библиотека
 
     // Компилятор Room для аннотаций (необходим для Java)
     annotationProcessor("androidx.room:room-compiler:2.5.2")
@@ -60,4 +60,18 @@ dependencies {
 
     // Опционально: поддержка RxJava3, если нужна
     implementation("androidx.room:room-rxjava3:2.5.2")
+
+
+
+    // Основная библиотека ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.7")
+
+    // Для работы с LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata:2.8.7")
+
+    // Для управления жизненным циклом компонентов
+    implementation("androidx.lifecycle:lifecycle-runtime:2.8.7")
+    
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
 }

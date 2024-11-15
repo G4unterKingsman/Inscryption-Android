@@ -10,6 +10,8 @@ import androidx.room.Room;
 import com.example.inscryption.cards.CardCreator;
 import com.example.inscryption.cards.ShowPlayers;
 import com.example.inscryption.db.AppDatabase;
+import com.example.inscryption.scale.Scale;
+import com.example.inscryption.service.MusicService;
 import com.example.inscryption.timer.Timer;
 
 public class MainActivity extends AppCompatActivity {
@@ -63,13 +65,13 @@ public class MainActivity extends AppCompatActivity {
 
     public static void resumeMainMusic() {
         if (mPlayer != null && !mPlayer.isPlaying()) {
-            mPlayer.start();
+            MusicService.startMusic(mPlayer);
         }
     }
 
     public static void pauseMainMusic() {
         if (MainActivity.mPlayer != null && MainActivity.mPlayer.isPlaying()) {
-            MainActivity.mPlayer.pause();
+            MusicService.pauseMusic(mPlayer);
         }
     }
 

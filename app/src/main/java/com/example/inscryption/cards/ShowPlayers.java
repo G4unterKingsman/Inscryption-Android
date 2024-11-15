@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.inscryption.MainActivity;
 import com.example.inscryption.R;
+import com.example.inscryption.cards.viewmodel.ShowPlayersViewModel;
+import com.example.inscryption.cards.viewmodel.ShowPlayersViewModelFactory;
 import com.example.inscryption.dao.PlayerDao;
 import com.example.inscryption.entity.Card;
 import com.example.inscryption.entity.DeckPlayer;
@@ -26,76 +28,75 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+// ShowPlayers.java
+import androidx.lifecycle.ViewModelProvider;
+
+// ShowPlayers.java
+import androidx.lifecycle.ViewModelProvider;
+
 public class ShowPlayers extends AppCompatActivity {
-    EditText editText;
-    Button button;
-    RecyclerView recyclerViewPlayers;
-    PlayerDao playerDao = MainActivity.getDatabase().playerDao();
-    PlayerAdapter playerAdapter;
+    private EditText editText;
+    private Button button;
+    private RecyclerView recyclerViewPlayers;
+    private PlayerAdapter playerAdapter;
+    private ShowPlayersViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players);
+
+        PlayerDao playerDao = MainActivity.getDatabase().playerDao();
+        ShowPlayersViewModelFactory factory = new ShowPlayersViewModelFactory(playerDao);
+        viewModel = new ViewModelProvider(this, factory).get(ShowPlayersViewModel.class);
+
         editText = findViewById(R.id.editTextSearchName);
         button = findViewById(R.id.buttonSearchPlayer);
         recyclerViewPlayers = findViewById(R.id.recyclerViewPlayers);
-        // Установка LayoutManager для RecyclerView
         recyclerViewPlayers.setLayoutManager(new LinearLayoutManager(this));
 
-        // Настройка адаптера для списка игроков
         playerAdapter = new PlayerAdapter(this::onPlayerClick);
         recyclerViewPlayers.setAdapter(playerAdapter);
 
+        // Наблюдение за изменениями в списке игроков
+        viewModel.getPlayers().observe(this, players -> playerAdapter.setPlayers(players));
+
+        // Наблюдение за изменениями в сообщениях
+        viewModel.getMessage().observe(this, message -> {
+            if (message != null) {
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Наблюдение за изменениями в колоде игрока
+        viewModel.getPlayerDeck().observe(this, cards -> {
+            if (cards != null) {
+                showPlayerDeck(cards);
+            }
+        });
+
         // Загрузка всех игроков при открытии Activity
-        loadAllPlayers();
+        viewModel.loadAllPlayers();
 
         // Обработчик для кнопки поиска игрока по имени
         button.setOnClickListener(v -> searchPlayerByName());
     }
 
-    // Загрузка всех игроков из базы данных
-    private void loadAllPlayers() {
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.execute(() -> {
-            List<Player> players = playerDao.getAllPlayers();
-            runOnUiThread(() -> playerAdapter.setPlayers(players));
-        });
-    }
-
     // Поиск игрока по имени
     private void searchPlayerByName() {
         String playerName = editText.getText().toString().trim();
-        if (playerName.isEmpty()) {
-            Toast.makeText(this, "Введите имя для поиска", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.execute(() -> {
-            Player player = playerDao.getPlayerByName(playerName);
-            if (player != null) {
-                List<Player> singlePlayerList = List.of(player);
-                runOnUiThread(() -> playerAdapter.setPlayers(singlePlayerList));
-            } else {
-                runOnUiThread(() -> Toast.makeText(this, "Игрок не найден", Toast.LENGTH_SHORT).show());
-            }
-        });
+        viewModel.searchPlayerByName(playerName);
     }
 
     // Обработчик клика на игрока
     private void onPlayerClick(Player player) {
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.execute(() -> {
-            List<Card> cards = playerDao.getDeckForPlayer(player.getPlayerId());
-            runOnUiThread(() -> showPlayerDeck(player, cards));
-        });
+        viewModel.loadPlayerDeck(player);
     }
 
     // Отображение колоды выбранного игрока
-    private void showPlayerDeck(Player player, List<Card> cards) {
+    private void showPlayerDeck(List<Card> cards) {
         StringBuilder deckInfo = new StringBuilder();
-        deckInfo.append("Колода игрока ").append(player.getPlayerName()).append(":\n");
+        deckInfo.append("Колода:\n");
         for (Card card : cards) {
             deckInfo.append(card.getCardName()).append(" - Урон: ")
                     .append(card.getDamage()).append(", Здоровье: ")
@@ -104,5 +105,4 @@ public class ShowPlayers extends AppCompatActivity {
         }
         Toast.makeText(this, deckInfo.toString(), Toast.LENGTH_LONG).show();
     }
-
 }

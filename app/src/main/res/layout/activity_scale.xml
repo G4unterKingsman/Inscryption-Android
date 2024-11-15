@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/table"
-    tools:context=".Scale">
+    tools:context=".scale.Scale">
 
     <ImageView
         android:id="@+id/scale2"
@@ -14,7 +14,7 @@
         android:layout_height="510dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPlus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         app:srcCompat="@drawable/zero" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonMinus"
         android:layout_width="141dp"
         android:layout_height="60dp"
         android:layout_marginStart="48dp"
@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="0.948" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonPlus"
         android:layout_width="135dp"
         android:layout_height="55dp"
         android:layout_marginStart="44dp"
@@ -42,7 +42,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.627"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/buttonMinus"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.938" />
 </androidx.constraintlayout.widget.ConstraintLayout>
